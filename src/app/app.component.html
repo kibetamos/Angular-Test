@@ -9,7 +9,11 @@
     
       <app-server-element 
       *ngFor="let serverElement for serverElements"
-      [svrElement]="serverElement"></app-server-element>
+      [svrElement]="serverElement">
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="...">{{serverElement.content}}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'"> {{serverElement.content}}</em>
+      </app-server-element>
       <!--<div app-servers></div>-->
       <!--<div class="app-servers"></div>-->
     </div>
