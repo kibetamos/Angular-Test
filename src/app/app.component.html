@@ -1,9 +1,15 @@
 <div class="container">
+  <app-cockpit>
+    (servecreated)="onServerAdded($event)"
+    (bpcreated)="onBlueprintAdded($event)"
+  </app-cockpit>
+  <hr>
   <div class="row">
     <div class="col-xs-12">
-      <h3>I'm in the AppComponent!</h3>
-      <hr>
-      <app-servers></app-servers>
+    
+      <app-server-element 
+      *ngFor="let serverElement for serverElements"
+      [svrElement]="serverElement"></app-server-element>
       <!--<div app-servers></div>-->
       <!--<div class="app-servers"></div>-->
     </div>
